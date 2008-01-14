@@ -1,5 +1,6 @@
 %include	/usr/lib/rpm/macros.java
 Summary:	Java Programming Assistant: bytecode manipulation
+Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
 Name:		javassist
 Version:	3.5
 Release:	0.1
@@ -29,36 +30,56 @@ source text; Javassist compiles it on the fly. On the other hand, the
 bytecode-level API allows the users to directly edit a class file as
 other editors.
 
+%description -l pl.UTF-8
+Javassist (asystent programisty Javy) ułatwia operacje na bajtkodzie
+Javy. Jest to biblioteka klas do modyfikowania bajtkodu w Javie;
+pozwala programom w Javie definiować nowe klasy w czasie działania
+oraz modyfikować pliki klas w czasie wczytywania ich przez JVM. W
+przeciwieństwie do innych podobnych edytorów bajtkodu Javassist
+udostępnia dwa poziomy API: źródłowy i bajtkodu. Korzystający z API
+poziomu źródłowego mogą modyfikować plik klasy bez znajomości
+specyfikacji bajtkodu. Całe API jest zaprojektowane z użyciem
+wyłącznie słownictwa języka Java. Można nawet określać wstawiany
+bajtkod w postaci tekstu źródłowego - Javassist skompiluje go w locie.
+Z drugiej strony API poziomu bajtkodu pozwala użytkownikom
+bezpośrednio modyfikować pliki klas, tak jak inne edytory.
+
 %package demo
-Summary:	Samples for %{name}
+Summary:	Samples for Javassist
+Summary(pl.UTF-8):	Przykłady użycia Javassista
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
 %description demo
-Demonstrations and samples for %{name}.
+Demonstrations and samples for Javassist.
 
 %description demo -l pl.UTF-8
-Pliki demonstracyjne i przykłady dla pakietu %{name}.
+Pliki demonstracyjne i przykłady dla Javassista.
 
 %package javadoc
-Summary:	Javadoc for %{name}
+Summary:	Javadoc for Javassista
+Summary(pl.UTF-8):	Dokumentacja Javadoc do Javassista
 Group:		Documentation
 
 %description javadoc
-Documentation for %{name}.
-
-%description javadoc -l pl.UTF-8
-Dokumentacja do %{name} -
+Documentation for Javassist.
 
 %description javadoc -l fr.UTF-8
-Javadoc pour %{name}.
+Javadoc pour Javassist.
+
+%description javadoc -l pl.UTF-8
+Dokumentacja do Javassista.
 
 %package manual
-Summary:	Tutorial for %{name}
+Summary:	Tutorial for Javassist
+Summary(pl.UTF-8):	Podręcznik do Javassista
 Group:		Documentation
 
 %description manual
-Manual for %{name}.
+Tutorial for Javassist.
+
+%description manual -l pl.UTF-8
+Podręcznik do Javassista.
 
 %prep
 %setup -q -n %{name}-%{version}.CR1-src
