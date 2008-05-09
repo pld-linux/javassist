@@ -3,7 +3,7 @@ Summary:	Java Programming Assistant: bytecode manipulation
 Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
 Name:		javassist
 Version:	3.5
-Release:	0.1
+Release:	1
 License:	MPL and LGPL
 Group:		Development/Languages/Java
 Source0:	http://repository.jboss.com/javassist/3.5.0.CR1-brew/src/%{name}-%{version}.CR1-src.tar.gz
@@ -105,11 +105,6 @@ install -d $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
 cp -pr html/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
 ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} # ghost symlink
 
-# manual
-install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/tutorial
-cp -pr tutorial/* $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/tutorial
-cp -p License.html $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -118,7 +113,7 @@ ln -nfs %{name}-%{version} %{_javadocdir}/%{name}
 
 %files
 %defattr(644,root,root,755)
-%doc %{_docdir}/%{name}-%{version}/License.html
+%doc License.html Readme.html
 %{_javadir}/*.jar
 
 %files demo
@@ -132,4 +127,4 @@ ln -nfs %{name}-%{version} %{_javadocdir}/%{name}
 
 %files manual
 %defattr(644,root,root,755)
-%doc %{_docdir}/%{name}-%{version}/tutorial
+%doc tutorial
