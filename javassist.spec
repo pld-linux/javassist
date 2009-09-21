@@ -1,3 +1,7 @@
+# TODO:
+# - rename to java-javassist (?)
+# - it doesn't build with gcj, because it requires com.sun.jdi. Is there any
+#   non-sun package that provides these classes?
 
 %if "%{pld_release}" == "ti"
 %bcond_without	java_sun	# build with gcj
@@ -12,8 +16,8 @@ Name:		javassist
 Version:	3.11.0
 Release:	1
 License:	MPL and LGPL
-Group:		Development/Languages/Java
-Source0:	http://downloads.sourceforge.net/project/jboss/Javassist/3.11.0.GA/javassist-3.11.GA.zip
+Group:		Libraries/Java
+Source0:	http://dl.sourceforge.net/project/jboss/Javassist/3.11.0.GA/%{name}-3.11.GA.zip
 # Source0-md5:	3afecb69a0c167a978c93f7074a74dfc
 URL:		http://www.csg.is.titech.ac.jp/~chiba/javassist/
 BuildRequires:	ant >= 0:1.6
