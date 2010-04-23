@@ -3,12 +3,6 @@
 # - it doesn't build with gcj, because it requires com.sun.jdi. Is there any
 #   non-sun package that provides these classes?
 
-%if "%{pld_release}" == "ti"
-%bcond_without	java_sun	# build with gcj
-%else
-%bcond_with	java_sun	# build with java-sun
-%endif
-
 %include	/usr/lib/rpm/macros.java
 Summary:	Java Programming Assistant: bytecode manipulation
 Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
@@ -21,10 +15,8 @@ Source0:	http://dl.sourceforge.net/project/jboss/Javassist/3.11.0.GA/%{name}-3.1
 # Source0-md5:	3afecb69a0c167a978c93f7074a74dfc
 URL:		http://www.csg.is.titech.ac.jp/~chiba/javassist/
 BuildRequires:	ant >= 0:1.6
-%{!?with_java_sun:BuildRequires:	java-gcj-compat-devel}
-%{?with_java_sun:BuildRequires:	java-sun}
+BuildRequires:	jdk
 BuildRequires:	jpackage-utils >= 0:1.6
-BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildArch:	noarch
