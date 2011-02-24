@@ -7,12 +7,12 @@
 Summary:	Java Programming Assistant: bytecode manipulation
 Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
 Name:		javassist
-Version:	3.11.0
+Version:	3.14.0
 Release:	1
 License:	MPL and LGPL
 Group:		Libraries/Java
-Source0:	http://dl.sourceforge.net/project/jboss/Javassist/3.11.0.GA/%{name}-3.11.GA.zip
-# Source0-md5:	3afecb69a0c167a978c93f7074a74dfc
+Source0:	http://downloads.sourceforge.net/jboss/%{name}-%{version}-GA.zip
+# Source0-md5:	a2d1b4421e3902554d333d009db852a8
 URL:		http://www.csg.is.titech.ac.jp/~chiba/javassist/
 BuildRequires:	ant >= 0:1.6
 BuildRequires:	jdk
@@ -89,7 +89,7 @@ Tutorial for Javassist.
 Podręcznik do Javassista.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-GA
 find -name '*.jar' | xargs rm -vf
 
 %build
