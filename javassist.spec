@@ -3,7 +3,6 @@
 # - it doesn't build with gcj, because it requires com.sun.jdi. Is there any
 #   non-sun package that provides these classes?
 
-%include	/usr/lib/rpm/macros.java
 Summary:	Java Programming Assistant: bytecode manipulation
 Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
 Name:		javassist
