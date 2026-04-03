@@ -7,7 +7,7 @@ Summary:	Java Programming Assistant: bytecode manipulation
 Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
 Name:		javassist
 Version:	3.14.0
-Release:	1
+Release:	2
 License:	MPL and LGPL
 Group:		Libraries/Java
 Source0:	http://downloads.sourceforge.net/jboss/%{name}-%{version}-GA.zip
