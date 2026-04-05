@@ -3,21 +3,23 @@
 # - it doesn't build with gcj, because it requires com.sun.jdi. Is there any
 #   non-sun package that provides these classes?
 
+%{?use_default_jdk:%use_default_jdk 8}
+
 Summary:	Java Programming Assistant: bytecode manipulation
 Summary(pl.UTF-8):	Asystent programisty Javy: operacje na bajtkodzie
 Name:		javassist
 Version:	3.14.0
-Release:	2
+Release:	3
 License:	MPL and LGPL
 Group:		Libraries/Java
 Source0:	http://downloads.sourceforge.net/jboss/%{name}-%{version}-GA.zip
 # Source0-md5:	a2d1b4421e3902554d333d009db852a8
 URL:		http://www.csg.is.titech.ac.jp/~chiba/javassist/
 BuildRequires:	ant >= 0:1.6
-BuildRequires:	jdk
+%buildrequires_jdk
 BuildRequires:	jpackage-utils >= 0:1.6
 BuildRequires:	rpm-javaprov
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.556
 BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -92,7 +94,8 @@ Podręcznik do Javassista.
 find -name '*.jar' | xargs rm -vf
 
 %build
-%ant dist
+# use compile target instead of compile14 (-source 1.4 no longer supported)
+%ant compile javadocs jar
 
 %install
 rm -rf $RPM_BUILD_ROOT
